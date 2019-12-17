@@ -8,7 +8,8 @@ public class Elevator {
     double _goal;
 
     PIDController pid;
-    double Kp = 0.01;
+    double Kp = 0.0004;
+    double Kf = 0.16;
     
     public Elevator (SensoredSystem elevatorSystem) {
         _elevatorSystem = elevatorSystem;
@@ -17,8 +18,7 @@ public class Elevator {
 
     public void update() {
         double power = Kp * (_goal - _elevatorSystem.getCounts());
-        
-
+        power += Kf;
         
         _elevatorSystem.set(power);
     }
