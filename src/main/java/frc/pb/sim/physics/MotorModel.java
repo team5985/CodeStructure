@@ -52,6 +52,7 @@ public class MotorModel {
      */
     public double getTorque(double voltage, double motorSpeed) {
         double current = (voltage - motorSpeed / kV) / resistance;
+        System.out.print("   I: " + current);
 
         if (current > currentLimit) current = currentLimit;
         if (current < -currentLimit) current = -currentLimit;

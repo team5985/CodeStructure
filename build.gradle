@@ -37,6 +37,14 @@ deploy {
     }
 }
 
+sourceSets {
+  test {
+    resources {
+      srcDir "test"
+    }
+  }
+}
+
 // Set this to true to enable desktop support.
 def includeDesktopSupport = true
 
